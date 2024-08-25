@@ -8,7 +8,7 @@ document.getElementById('bookingForm').addEventListener('submit', async (e) => {
     const guests = document.getElementById('guests').value;
     const specialRequests = document.getElementById('specialRequests').value;
 
-    const response = await fetch('https://backend-yzf1.onrender.com/api/bookings', {
+    const response = await fetch('https://localhost:3005/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, email, date, time, guests, specialRequests })

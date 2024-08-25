@@ -1,5 +1,5 @@
 async function fetchMenu() {
-    const response = await fetch('https://backend-yzf1.onrender.com/api/menu');
+    const response = await fetch('https://localhost:3005/api/menu');
     if (response.ok) {
         const menuItems = await response.json();
         const menuDiv = document.getElementById('menu');

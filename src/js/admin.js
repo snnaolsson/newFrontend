@@ -1,18 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
-    console.log(token);
-    if (!token) {
-        window.location.href = '/login.html';
-    }
+    console.log("Current page:", window.location.pathname);
+    console.log("Token found:", token);
 
-    fetchMenuItems(token);
-    fetchBookings(token);
+    if (!token) {
+        console.log("Redirecting to login page...");
+        window.location.href = '/login.html';
+    } else {
+        // Endast om token finns fortsätter vi att hämta data
+        fetchMenuItems(token);
+        fetchBookings(token);
+    }
+});
 
     document.getElementById('logoutButton').addEventListener('click', () => {
         localStorage.removeItem('token');
         window.location.href = '/login.html';
     });
-});
+
 
 
 
@@ -37,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const menuItem = { name, description, category };
 
-        let url = 'https://backend-yzf1.onrender.com/api/menu';
+        let url = 'https://localhost:3005/api/menu';
         let method = 'POST';
 
         if (menuId) {
@@ -82,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const booking = { name, phone, email, date:datetime, time, guests, specialRequests };
         console.log(booking);
 
-        let url = 'https://backend-yzf1.onrender.com/api/bookings';
+        let url = 'https://localhost:3005/api/bookings';
         let method = 'POST';
 
         if (bookingId) {
@@ -122,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 async function fetchMenuItems(token) {
-    const response = await fetch('https://backend-yzf1.onrender.com/api/menu', {
+    const response = await fetch('https://localhost:3005/api/menu', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -156,7 +161,7 @@ function renderMenuItems(menuItems) {
 
 function editMenuItem(id) {
     const token = localStorage.getItem('token');
-    fetch(`https://backend-yzf1.onrender.com/api/menu/${id}`, {
+    fetch(`https://localhost:3005/api/menu/${id}`, {
         method: 'PUT',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -198,7 +203,7 @@ function editMenuItem(id) {
 
             const updatedItem = { name: updatedName, description: updatedDescription, category: updatedCategory };
 
-            const response = await fetch(`https://backend-yzf1.onrender.com/api/menu/${item._id}`, {
+            const response = await fetch(`https://localhost:3005/api/menu/${item._id}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -232,7 +237,7 @@ function cancelEdit(id) {
 async function deleteMenuItem(id) {
     if (confirm('Är du säker på att du vill ta bort denna menyartikel?')) {
         const token = localStorage.getItem('token');
-        const response = await fetch(`https://backend-yzf1.onrender.com/api/menu/${id}`, {
+        const response = await fetch(`https://localhost:3005/api/menu/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -252,7 +257,7 @@ async function deleteMenuItem(id) {
 
 
 async function fetchBookings(token) {
-    const response = await fetch('https://backend-yzf1.onrender.com/api/bookings', {
+    const response = await fetch('https://localhost:3005/api/bookings', {
         method: 'GET',
         headers: { 
             'Authorization': `Bearer ${token}`,
@@ -294,7 +299,7 @@ function renderBookings(bookings) {
 
 function editBooking(id) {
     const token = localStorage.getItem('token');
-    fetch(`https://backend-yzf1.onrender.com/bookings/${id}`, {
+    fetch(`https://localhost:3005/bookings/${id}`, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -356,7 +361,7 @@ function editBooking(id) {
                 specialRequests: updatedSpecialRequests
             };
 
-            const response = await fetch(`https://backend-yzf1.onrender.com/api/bookings/${booking._id}`, {
+            const response = await fetch(`https://localhost:3005/api/bookings/${booking._id}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -391,7 +396,7 @@ function cancelBookingEdit(id) {
 async function deleteBooking(id) {
     if (confirm('Är du säker på att du vill ta bort denna bokning?')) {
         const token = localStorage.getItem('token');
-        const response = await fetch(`https://backend-yzf1.onrender.com/api/bookings/${id}`, {
+        const response = await fetch(`https://localhost:3005/api/bookings/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
