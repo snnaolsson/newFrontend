@@ -3,44 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Délice</title>
+    <title>Book Table</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="images/delice.svg" alt="Délice logo"></a>
-        </div>
+            <a href="index.html"><img src="images/delice.svg" alt="Délice logo"></a>        </div>
         <nav>
             <div class="hamburger" id="hamburger">
                 &#9776; <!-- Unicode symbol for the hamburger icon -->
             </div>
             <ul class="navbar" id="navbar">
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="menu.html">MENU</a></li>
                 <li><a href="booking.html">BOOK TABLE</a></li>
-                <li>   <a href="admin.html" id="admin-site">ADMIN</a></li>
+
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <h2 id="small-hero-text">WHY SAVE THE BEST FOR LAST?</h2>
-        <div id="hero-img">
-            
-            <h2 id="hero-text">Why save the best for last?</h2>
-            <img src="images/delice-hero.webp" alt="delice">
-            
-
+    <div id="booking-container">
+        <div id="booking-div">
+        <form id="bookingForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="tel" id="phone" placeholder="Phone" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <input type="number" id="guests" placeholder="Number of Guests" required>
+            <textarea id="specialRequests" placeholder="Special Requests"></textarea>
+            <button type="submit">Book Table</button>
+          </form>
         </div>
-        <div id="about">
-        <div id="delice-noun">
-            <h3 id="delice-name">DÉLICE</h3>
-            <h4>- noun. delight [noun] (something which causes) great pleasure.</h4>
-        </div>
-        <div id="delice-info">
-            <p><span id="first-word">DÉLICE</span> is a French-inspired luxury dessert restaurant that offers an exquisite selection of delicacies crafted with the finest ingredients. Each creation is a harmonious blend of tradition and innovation, designed to provide a sublime and unforgettable culinary experience. Indulge in a world where elegance meets sweetness, and every dessert is a celebration of refined taste and artistry.</p>
-        </div>
-        </div>
-
     </div>
     <footer>
         <div class="footer-container">
@@ -59,9 +53,10 @@
         </div>
         <div class="footer-bottom">
             <p>© 2024 Délice. All rights reserved.</p>
-         
+            <a href="admin.html" id="admin-site">ADMIN</a>
         </div>
     </footer>
-    <script type="module" src="js/hamburger.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/hamburger.js"></script>
 </body>
 </html>
