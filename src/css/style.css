@@ -1,0 +1,633 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #C6D1D6;
+    color: black;
+    font-family: 'Joan', sans-serif;
+
+
+}
+.menu-item {
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.03); /* Förstorar menyalternativet lite */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.87); /* Lägger till en blå glow */
+}
+
+header {
+    width: 100%;
+    background-color: transparent; /* Justera bakgrundsfärg om det behövs */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 75px;
+}
+.logo img {
+    height: 45px;
+    padding-left: 20px;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+}
+.navbar{
+    list-style-type: none;
+    display: flex;
+    gap: 25px; /* Space between menu items */
+
+}
+.navbar li a:hover {
+    color: #6c757d; /* Färg vid hover */
+}
+.navbar li {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    list-style: none;
+    display: inline;
+}
+.navbar li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+}
+a:visited{
+    color: black;
+}
+.hamburger {
+    display: none;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+footer {
+    background-color: #292929;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0px -5px 5px #2d2d30;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-info, .footer-hours, .footer-social {
+    margin: 10px;
+}
+
+.footer-info h4, .footer-hours h4, .footer-social h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-social a {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+#admin-site{
+    color: #d8d8d8;
+    text-decoration: none;
+}
+#admin-site:hover{
+    color: #A4C3D1;
+}
+/*STARTSIDA*/
+
+#about{
+    background-color: #242424;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+}
+#delice-name{
+    color: #C5DCE6;
+    font-size: 5rem;
+    width: 40%;
+    letter-spacing: 10px;
+}
+#delice-noun h4{
+    font-style: italic;
+}
+#delice-info{
+    width: 40%;
+    margin: auto;
+    line-height: 2rem;
+    word-spacing: 2px;
+}
+#about h4{
+    color: #FFFFFF;
+    font-size: 1.4rem;
+}
+#about p{
+    color: #FFFFFF;
+    font-size: 1.2rem;
+}
+#first-word{
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+#small-hero-text{
+    display: none;
+}
+
+
+/*INLOGGNINGSSIDAN*/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full bredd för container */
+    max-width: 400px; /* Maximal bredd på formuläret */
+    background-color: white; /* Bakgrundsfärg för formuläret */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lätt skugga för att lyfta formuläret */
+    margin: auto;
+    margin-top: 70px;
+
+}
+
+.login-form {
+    width: 100%;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    justify-self: center;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #5a6268;
+}
+#hero-img{
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    display: flexbox;
+}
+#hero-img img{
+    width: 100%;
+    display: block;
+    padding-top: 50px;
+}
+#hero-img h2 {
+    width: 50%;
+    font-size: 5rem;
+    position: absolute;
+    top: 30%; /* Justera dessa värden för att placera texten där du vill ha den */
+    left: 30%;
+    font-weight: 100;
+    transform: translate(-50%, -50%); /* Centrerar texten horisontellt och vertikalt */
+    z-index: 1; /* För att texten ska ligga på bilden */
+    font-family: 'Baskervville SC', serif;
+    word-spacing: 10px;
+    line-height: 125px;
+
+}
+
+/*MENY*/
+.menu-container {
+    padding: 0 100px;
+    background-color: #242424;
+    color: white;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.menu-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 100;
+    text-indent: 100px;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    
+}
+.menu-container h3{
+    color: #C5DCE6;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#menu h2 {
+    font-size: 50px;
+    margin-top: 30px;
+    color: #C5DCE6;
+}
+.meny-div{
+    margin-bottom: 100px;
+}
+
+#menu p {
+    font-size: 18px;
+    color: #CCCCCC;
+    margin-top: 10px;
+    line-height: 1.6;
+    text-indent: 50px;
+}
+.package-p{
+    line-height: 2;
+    word-spacing: 2px;
+    margin: 1%;
+    padding-bottom: 1%;
+}
+
+/*BOKNINGSSIDA*/
+#booking-container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #1a1a1a; /* Bakgrundsfärg för formuläret */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #C5DCE6; /* Textfärg */
+}
+#booking-div{
+    width: 70%;
+    margin: auto;
+    padding: 2%;
+}
+
+form#bookingForm, #menuForm {
+    display: flex;
+    flex-direction: column;
+}
+.booking-admin h2, .menu-admin h2{
+    color: #F0F0F0;
+}
+form#bookingForm input,
+form#bookingForm textarea,
+form#bookingForm button, #menuForm input, #menuForm textarea, #menuForm button {
+    margin-bottom: 15px;
+    padding: 3px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+form#bookingForm input,
+form#bookingForm textarea {
+    background-color: #F0F0F0; /* Färg på input och textarea */
+    color: #333333; /* Textfärg inuti inputfält */
+}
+
+form#bookingForm button, #menuForm button {
+    background-color: #C5DCE6;
+    color: #333333;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form#bookingForm button:hover, #menuForm button:hover, #addNewItemButton:hover, #addNewBookingButton:hover {
+    background-color: #AAB8BF;
+    
+}
+
+/*ADMINSIDA*/
+#admin-container{
+    width: 90%;
+    margin: auto;
+    display: flexbox;
+}
+
+.admin-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+.menu-admin, .booking-admin {
+    width: 48%; /* Ger utrymme för båda kolumnerna att dela upp sidan */
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    color: #333333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-admin h2, .booking-admin h2 {
+    margin-bottom: 20px;
+    color: #F0F0F0;
+    text-align: center;
+    font-weight: 100;
+}
+
+.menu-item, .booking-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #333333;
+    border-radius: 4px;
+    color: #C5DCE6;
+}
+
+
+.edit-buttons:hover {
+    background-color: #AAB8BF;
+}
+.delete-buttons:hover{
+    background-color: #d53b3b;
+}
+.menu-item-div, .booking-item-div{
+    background-color: #E0E0E0;
+    padding: 2%;
+    margin: 2%;
+}
+.delete-buttons, .edit-buttons{
+    background-color: #A4C3D1;
+    color: #333333;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#addNewItemButton, #addNewBookingButton{
+    width: 100%;
+    margin: auto;
+    background-color: #A4C3D1;
+    color: #333333;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.notification {
+    display: none; /* Gör den osynlig som standard */
+    background-color: #4CAF50; /* Grön bakgrundsfärg för positiv feedback */
+    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+#logoutButton{
+    background-color: #AAB8BF;
+    padding: 10px 15px;
+    border-color: #e2e5e2;
+    border-radius: 5%;
+    cursor: pointer;
+
+}
+#logoutButton:hover{
+    background-color:#C6D1D6;
+}
+/* Responsive styles */
+@media (max-width: 769px) {
+    .navbar {
+        display: none; /* Döljer menyn som standard */
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 0; /* Börjar från högerkanten */
+        left: 0; /* Täcker hela bredden */
+        background-color: rgba(211, 224, 231, 0.8); /* Lätt transparent bakgrund */
+        width: 100%; /* Täcker hela bredden */
+        padding: 10px 20px; /* Justering av padding */
+        border-radius: 0; /* Ingen rundning på hörnen */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Ser till att menyn ligger ovanpå annat innehåll */
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .admin-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .menu-admin, .booking-admin{
+        flex: 1 1 90%; /* Flexbox gör att de tar upp 90% av behållarens bredd */
+    display: block;
+    margin: auto; /* Centrerar innehållet */
+    padding: 20px; /* Lägger till padding om det behövs */
+    box-sizing: border-box; /* Gör så att padding räknas in i bredden */
+}
+#booking-div{
+    width: 95%;
+}
+.menu-container{
+    padding: 5%;
+    margin: auto;
+}
+#menu{
+    width: 100%;
+    max-width: 100%;
+    min-width: 95%;
+}
+.menu-container h2{
+    text-indent: 0;
+}
+#small-hero-text{
+    font-size: 2rem;
+    display: flex;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    padding-left: 5%;
+    font-weight: 100;
+    font-family: 'Baskervville SC', sans-serif;
+}
+#hero-text{
+    display: none;
+}
+
+
+
+/* STARTSIDA */
+
+#about {
+    background-color: #242424;
+    width: 100vw;
+    padding: 5%;
+    display: flex;
+    flex-direction: column; /* Ändra till kolumnlayout för mindre skärmar */
+    align-items: center; /* Centrera innehållet */
+    text-align: center; /* Centrera texten */
+}
+
+#delice-name {
+    color: #C5DCE6;
+    font-size: 3rem; /* Justera textstorleken för mindre skärmar */
+    letter-spacing: 10px;
+    margin-bottom: 20px; /* Lägg till marginal nedåt för separation */
+}
+
+#delice-noun h4 {
+    font-style: italic;
+}
+
+#delice-info {
+    width: 100%;
+    margin-top: 20px; /* Justera avståndet mellan elementen */
+    line-height: 2rem;
+    word-spacing: 2px;
+}
+
+#about h4, #about p {
+    color: #FFFFFF;
+    font-size: 1.2rem; /* Justera textstorleken */
+}
+
+#first-word {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* HERO-IMAGE */
+
+#hero-img {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+#hero-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#hero-img h2 {
+    font-size: 1.8rem; /* Justera textstorleken för mindre skärmar */
+    position: absolute;
+    bottom: 10%; /* Placera texten längre ner på bilden */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-family: 'Baskervville SC', serif;
+    word-spacing: 10px;
+    line-height: 2rem;
+    color: black; /* Se till att texten är läsbar över bilden */
+    text-align: center;
+    width: 80%; /* Anpassa textens bredd */
+}
+
+#delice-noun{
+    text-align: justify;
+    font-weight: 100;
+    padding-bottom: 10%;
+}
+#delice-info{
+    text-align: justify;
+    padding: 5%;
+    padding-top: 50px;
+    background-color: #A4C3D1;
+    width: 90%;
+    margin: auto;
+}
+
+}
+
+@media (max-width: 479px) {
+    #delice-name {
+        font-size: 2rem; /* Ännu mindre textstorlek för telefoner */
+    }
+    #hero-text{
+        display: none;
+    }
+    #small-hero-text{
+        display: flex;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        padding-left: 5%;
+        font-weight: 100;
+        font-family: 'Baskervville SC', sans-serif;
+    }
+
+    #hero-img h2 {
+        font-size: 1.5rem; /* Anpassa textstorleken för telefoner */
+        line-height: 1.6rem;
+    }
+
+    #delice-noun{
+        text-align: justify;
+        font-weight: 100;
+        padding-bottom: 10%;
+    }
+    #delice-info{
+        text-align: justify;
+        padding: 5%;
+        padding-top: 50px;
+        background-color: #A4C3D1;
+        width: 90%;
+        margin: auto;
+    }
+    
+}
